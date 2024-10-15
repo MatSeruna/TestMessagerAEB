@@ -1,0 +1,27 @@
+services:
+  web:
+    image: testmessageraeb:latest
+    build:
+      context: ./TestMessagerAEB/
+      dockerfile: Dockerfile
+    ports:
+      - "5001:80"
+    depends_on:
+      - db
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+
+  db:
+    image: "postgres:latest"
+    environment:
+      - POSTGRES_USER=MessagerAdmin
+      - POSTGRES_PASSWORD=Admin1
+      - POSTGRES_DB=MessagerDB
+    ports:
+      - "5555:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:

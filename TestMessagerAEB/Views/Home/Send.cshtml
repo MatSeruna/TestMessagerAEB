@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Клиент 1 отправка сообщений";
+}
+
+<h1>Отправить сообщение</h1>
+<form id="messageForm" asp-action="SendMessage">
+    <input type="text" id="messageText" placeholder="Введите сообщение">
+    <button type="submit">Отправить</button>
+</form>
+
+@section Scripts {
+    <script src="~/send.js"></script>
+}

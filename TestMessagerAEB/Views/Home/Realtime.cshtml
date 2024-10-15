@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Сообщения в реальном времени";
+}
+
+<h1>Сообщения:</h1>
+<ul id="messages">
+    @foreach (var message in Model)
+    {
+        <li>@message</li>
+    }
+</ul>
+
+@section Scripts {
+    <script src="https://ajax.aspnetcdn.com/ajax/Microsoft.AspNetCore.SignalR/hubs"></script>
+    <script src="~/realtime.js"></script>
+}

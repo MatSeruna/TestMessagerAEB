@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "История сообщений";
+}
+
+<h1>История сообщений:</h1>
+<ul id="messages">
+    @foreach (var message in Model)
+    {
+        <li>@message</li>
+    }
+</ul>
+
+@section Scripts {
+    <script src="~/history.js"></script>
+}
